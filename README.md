@@ -16,7 +16,7 @@ Here's a general timeline of the growth stages:
 
 3. Stem Extension (Day 70-120): The wheat plant will continue to grow taller, with the stem elongating at a rapid pace. The plant will produce more tillers and leaves, and a nodal root system will form. This stage can last for several weeks to a few months.
 
-4. Booting and Heading stage (Day 120-180 days): The wheat plant begins to form a head, or spike, at the top of the stem. The head will be enclosed in a protective sheath, called a boot, by the end of this phase head will emerge from the protective sheath. These phases can last for several weeks to a few months.
+4. Booting and Heading stage (Day 120-180): The wheat plant begins to form a head, or spike, at the top of the stem. The head will be enclosed in a protective sheath, called a boot, by the end of this phase head will emerge from the protective sheath. These phases can last for several weeks to a few months.
 
 5. Flowering and Grain Fill (Day 180-260): The wheat plant will enter its reproductive stage, with flowers appearing on the spikes. Pollination will occur, and the flowers will develop into kernels of wheat. These kernels will fill with starch and protein, resulting in a mature grain. These phases last few months.
 
