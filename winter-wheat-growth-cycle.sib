@@ -1,0 +1,9 @@
+module "population"
+load "wheat-growth-cycle.pm"
+add all measures
+deadline 330
+dt 1.0
+replica 10
+init "init"
+simulate
+save output "/Users/roberto/repos/wheat-growth-cycle/results" prefix "wheat_" postfix "__"
