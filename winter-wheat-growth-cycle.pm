@@ -4,19 +4,23 @@
 
 
 /* The percentage of nutrients in the soil (a value between 0 and 1) */
-param soil_nutrients = 0.5;
+param soil_nutrients = 1.0;
 
 /* Average daily water (mm) received by the plantation during its growth period (best conditions: 4-6mm) */
 param daily_water = 5;
 
 /* Average daily temperature (°C) during the growth cycle period (best conditions: 10-20°C) */
-param temperature = 5;
+param temperature = 15;
 
 
 /* _-_-_-_-_-_-_-_-_-_-_ Consts _-_-_-_-_-_-_-_-_-_-_ */
 
 
 const root_energy = 4;
+
+const tiller_energy = 2;
+
+const productive_tillers_rate = 0.5;
 
 const daily_water_rate = 1/(1+(((daily_water-5))^4));
 
@@ -36,7 +40,10 @@ species RS;
 species R of [0, root_energy];
 
 /* Tillers */
-species T;
+species T of [0, tiller_energy];
+
+/* Heads */
+species H;
 
 
 /* _-_-_-_-_-_-_-_-_-_-_ Rules _-_-_-_-_-_-_-_-_-_-_ */
@@ -54,7 +61,12 @@ rule seed_rots {
 
 /* Roots produce Tillers depending on environmental conditions */
 rule roots_produce_tiller for i in [1, root_energy] {
-	R[i] -[temperature_rate * daily_water_rate]-> T | R[i-1]
+	R[i] -[temperature_rate * daily_water_rate]-> T[tiller_energy-1] | R[i-1]
+}
+
+/* Tillers produces Heads */
+rule tillers_produce_heads for i in [1, tiller_energy] {
+	T[i] -[temperature_rate * daily_water_rate * 0.25]-> H | T[i-1]
 }
 
 
@@ -64,6 +76,11 @@ rule roots_produce_tiller for i in [1, root_energy] {
 measure seeds = #S;
 measure rotten_seed = #RS;
 measure roots = #R[i for i in [0, root_energy]];
-measure tillers = #T;
+measure tillers = #T[i for i in [0, tiller_energy]];
+measure heads = #H;
+
+
+/* _-_-_-_-_-_-_-_-_-_-_ Initial State _-_-_-_-_-_-_-_-_-_-_ */
+
 
 system init = S<100>;
