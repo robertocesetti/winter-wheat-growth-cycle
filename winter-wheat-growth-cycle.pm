@@ -12,7 +12,7 @@ param daily_water = 5;
 /* Average daily temperature (°C) during the growth cycle period (best conditions: 10-20°C) */
 param temperature = 15;
 
-/* Represents the amount of fertiliser applied per plant (best conditions: 2g) */
+/* Represents the amount of fertilizer applied per plant (best conditions: 2g) */
 param fertilizer = 2;
 
 
@@ -23,7 +23,7 @@ const max_tillers = 6;
 
 const max_flowers = 2;
 
-const max_kernels = 20;
+const max_kernels = 23;
 
 const productive_tillers_rate = 0.5;
 
@@ -33,7 +33,7 @@ const temperature_rate = 1/(1+(((temperature-20)/5)^2));
 
 const environmental_conditions = daily_water_rate * temperature_rate;
 
-const fertilization_rate = 1/(1+((fertilizer-(2/soil_nutrients))/0.2)^6);
+const fertilization_rate = 1/(1+(fertilizer-(2/soil_nutrients))^4);
 
 
 /* _-_-_-_-_-_-_-_-_-_-_ Species _-_-_-_-_-_-_-_-_-_-_ */
@@ -45,7 +45,7 @@ species S;
 /* Rotten seeds */
 species RS;
 
-/* Plant */
+/* Plants */
 species P of [0, max_tillers];
 
 /* Tillers */
@@ -92,8 +92,8 @@ rule flowers_produce_kernels for i in [1, max_kernels] {
 
 
 measure seeds = #S;
-measure rotten_seed = #RS;
-measure plant = #P[i for i in [0, max_tillers]];
+measure rotten_seeds = #RS;
+measure plants = #P[i for i in [0, max_tillers]];
 measure tillers = #T[i for i in [0, max_flowers]];
 measure flowers = #F[i for i in [0, max_kernels]];
 measure kernels = #K;
