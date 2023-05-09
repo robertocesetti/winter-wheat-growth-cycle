@@ -82,7 +82,6 @@ rule tillers_produce_flowers for i in [1, max_flowers] {
 }
 
 /* Flowers produce Kernels */
-/* A high yield can be defined as when a flower produces an average of 54 kernels of wheat */
 rule flowers_produce_kernels for i in [1, max_kernels] {
 	F[i] -[fertilization_rate * environmental_conditions]-> K | F[i-1]
 }
