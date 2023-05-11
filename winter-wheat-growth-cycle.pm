@@ -1,5 +1,6 @@
 /*-------------------- Winter Wheat Growth Cycle --------------------*/
 
+
 /* _-_-_-_-_-_-_-_-_-_-_ Params _-_-_-_-_-_-_-_-_-_-_ */
 
 
@@ -90,15 +91,28 @@ rule flowers_produce_kernels for i in [1, max_kernels] {
 /* _-_-_-_-_-_-_-_-_-_-_ Measures _-_-_-_-_-_-_-_-_-_-_ */
 
 
+/* The number of seeds during the growth cycle */
 measure seeds = #S;
+
+/* The number of rotten seeds during the growth cycle */
 measure rotten_seeds = #RS;
+
+/* The number of plants during the growth cycle */
 measure plants = #P[i for i in [0, max_tillers]];
+
+/* The number of tillers during the growth cycle */
 measure tillers = #T[i for i in [0, max_flowers]];
+
+/* The number of flowers during the growth cycle */
 measure flowers = #F[i for i in [0, max_kernels]];
+
+/* The number of kernels during the growth cycle */
 measure kernels = #K;
 
 
-/* _-_-_-_-_-_-_-_-_-_-_ Initial State _-_-_-_-_-_-_-_-_-_-_ */
+/* _-_-_-_-_-_-_-_-_-_-_ Initial States _-_-_-_-_-_-_-_-_-_-_ */
 
 
 system init = S<100>;
+
+/* ————————————————————————-—————————————————————————————————-*/
