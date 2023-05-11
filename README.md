@@ -1,5 +1,7 @@
 ## &nbsp;&nbsp;&nbsp;Winter Wheat Growth Cycle
 
+The goal of this project is to create a model that represents the growth cycle of winter wheat and enables its simulation. The objective is to observe and study the behavior of winter wheat under different conditions. By conducting simulations, valuable insights can be obtained regarding how the crop responds and adapts to various environmental factors.
+
 The growth cycle of winter wheat is defined by distinct phases, each of which is influenced by various factors, including soil nutrient composition, weather conditions, and fertilizer application. Observing and analyzing the growth of a wheat plantation under different conditions, from optimal to difficult, offers a fascinating opportunity to understand the key factors influencing this process.
 
 In order to fully grasp the model and the results it generates, it is essential to possess a solid comprehension of the life cycle of winter wheat and the various factors that influence it.
